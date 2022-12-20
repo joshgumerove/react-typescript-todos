@@ -11,7 +11,6 @@ const Todos: React.FC<Props> = ({ items }) => {
   return (
     <ul>
       {items.map((item) => (
-        // <li key={item.id}>{item.description}</li>
         <Todo key={item.id} description={item.description} />
       ))}
     </ul>
@@ -19,5 +18,3 @@ const Todos: React.FC<Props> = ({ items }) => {
 };
 
 export default Todos;
-
-// note -- React.FC is a type definition (FunctionComponent)

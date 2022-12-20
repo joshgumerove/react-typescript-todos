@@ -10,3 +10,5 @@ const Todo: React.FC<Props> = ({ description }) => {
 };
 
 export default Todo;
+
+// do not pass down key as a prop
