@@ -1,15 +1,16 @@
 import React from "react";
+import { Todo } from "../models/todo";
 
 interface Props {
   // children: React.ReactNode;
-  items: string[];
+  items: Todo[];
 }
 
 const Todos: React.FC<Props> = ({ items }) => {
   return (
     <ul>
       {items.map((item) => (
-        <li>{item}</li>
+        <li key={item.id}>{item.description}</li>
       ))}
     </ul>
   );
