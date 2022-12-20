@@ -2,11 +2,11 @@ import React from "react";
 import { Item } from "../models/todo";
 
 interface Props {
-  item: Item;
+  description: string;
 }
 
-const Todo: React.FC<Props> = ({ item }) => {
-  return <li key={item.id}>{item.description}</li>;
+const Todo: React.FC<Props> = ({ description }) => {
+  return <li>{description}</li>;
 };
 
 export default Todo;

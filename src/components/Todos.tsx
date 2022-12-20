@@ -12,7 +12,7 @@ const Todos: React.FC<Props> = ({ items }) => {
     <ul>
       {items.map((item) => (
         // <li key={item.id}>{item.description}</li>
-        <Todo item={item} />
+        <Todo key={item.id} description={item.description} />
       ))}
     </ul>
   );
