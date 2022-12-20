@@ -1,5 +1,6 @@
 import React from "react";
 import Todos from "./components/Todos";
+import NewTodo from "./components/NewTodo";
 import "./App.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
           { id: "df354345", description: "Learn TypeScript" },
         ]}
       />
+      <NewTodo />
     </div>
   );
 }
