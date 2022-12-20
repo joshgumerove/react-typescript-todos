@@ -1,18 +1,19 @@
 import React from "react";
 import Todos from "./components/Todos";
 import NewTodo from "./components/NewTodo";
+import Item from "./models/todo";
 import "./App.css";
 
 function App() {
+  const todosList = [new Item("Learn React"), new Item("Learn TypeScript")];
+
+  const adddTodoHandler = (item: Item) => {
+    todosList.push(item);
+  };
   return (
     <div className="App">
-      <Todos
-        items={[
-          { id: "as455464", description: "Learn React" },
-          { id: "df354345", description: "Learn TypeScript" },
-        ]}
-      />
-      <NewTodo />
+      <NewTodo onAddTodo={adddTodoHandler} />
+      <Todos items={todosList} />
     </div>
   );
 }

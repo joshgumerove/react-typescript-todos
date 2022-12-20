@@ -1,5 +1,4 @@
 import React from "react";
-import { Item } from "../models/todo";
 
 interface Props {
   description: string;
