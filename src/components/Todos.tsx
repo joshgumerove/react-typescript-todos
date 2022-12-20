@@ -1,12 +1,20 @@
 import React from "react";
 
-function Todos() {
-  return (
-    <ul>
-      <li>Learn React</li>
-      <li>Learn TypeScript</li>
-    </ul>
-  );
+interface Props {
+  // children: React.ReactNode;
+  items: string[];
 }
 
+const Todos: React.FC<Props> = ({ items }) => {
+  return (
+    <ul>
+      {items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  );
+};
+
 export default Todos;
+
+// note -- React.FC is a type definition (FunctionComponent)
