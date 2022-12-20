@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Todos from "./components/Todos";
 import NewTodo from "./components/NewTodo";
 import Item from "./models/todo";
 import "./App.css";
 
 function App() {
-  const todosList = [new Item("Learn React"), new Item("Learn TypeScript")];
+  const [todosList, setTodoList] = useState<Item[]>([]);
 
   const adddTodoHandler = (item: Item) => {
-    todosList.push(item);
+    setTodoList((prev) => [...prev, item]);
   };
   return (
     <div className="App">

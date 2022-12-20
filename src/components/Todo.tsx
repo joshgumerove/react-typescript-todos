@@ -1,11 +1,12 @@
 import React from "react";
+import classes from "./TodoItem.module.css";
 
 interface Props {
   description: string;
 }
 
 const Todo: React.FC<Props> = ({ description }) => {
-  return <li>{description}</li>;
+  return <li className={classes.item}>{description}</li>;
 };
 
 export default Todo;

@@ -1,5 +1,6 @@
 import React, { FormEvent, useRef } from "react";
 import Item from "../models/todo";
+import classes from "./NewTodo.module.css";
 
 interface Props {
   onAddTodo: (item: Item) => void;
@@ -20,7 +21,7 @@ const NewTodo: React.FC<Props> = ({ onAddTodo }) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={classes.form}>
       <label htmlFor="text">Todo text</label>
       <br />
       <input
