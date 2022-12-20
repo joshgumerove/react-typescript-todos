@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -24,3 +24,6 @@ function App() {
 }
 
 export default App;
+
+// note how this is now a .tsx file
+// do not need to compile our JavaScript code manually
