@@ -10,10 +10,17 @@ function App() {
   const adddTodoHandler = (item: Item) => {
     setTodoList((prev) => [...prev, item]);
   };
+
+  const removeTodoHandler = (todoId: string) => {
+    setTodoList((prevTodos) => {
+      return prevTodos.filter((todo) => todo.id !== todoId);
+    });
+  };
+
   return (
     <div className="App">
       <NewTodo onAddTodo={adddTodoHandler} />
-      <Todos items={todosList} />
+      <Todos items={todosList} onRemoveTodo={removeTodoHandler} />
     </div>
   );
 }
