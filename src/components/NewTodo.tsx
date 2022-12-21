@@ -1,12 +1,10 @@
-import React, { FormEvent, useRef } from "react";
+import React, { FormEvent, useRef, useContext } from "react";
+import { TodosContext } from "../store/todos-context";
 import Item from "../models/todo";
 import classes from "./NewTodo.module.css";
 
-interface Props {
-  onAddTodo: (item: Item) => void;
-}
-
-const NewTodo: React.FC<Props> = ({ onAddTodo }) => {
+const NewTodo: React.FC = () => {
+  const todosContext = useContext(TodosContext);
   const todoTextInputRef = useRef<HTMLInputElement>(null); // note how we must provide an initial value
 
   const submitHandler = (e: FormEvent): void => {
@@ -17,7 +15,7 @@ const NewTodo: React.FC<Props> = ({ onAddTodo }) => {
       throw new Error("Error: text must not be empty");
     }
     const newInput = new Item(enteredText);
-    onAddTodo(newInput);
+    todosContext.addTodo(newInput);
   };
 
   return (

@@ -15,5 +15,3 @@ const Todo: React.FC<Props> = ({ description, onRemoveTodo }) => {
 };
 
 export default Todo;
-
-// do not pass down key as a prop
